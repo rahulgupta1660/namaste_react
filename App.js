@@ -1,35 +1,20 @@
-/*
- *
- *
- *<div id="parent">
- *    <div id="child">
- *        <h1></h1>
- *        <h1></h1>
- *    </div>
- *    <div id="child2">
- *        <h1></h1>
- *        <h1></h1>
- *    </div>
- *</div>
- *
- *
- *
- */
-
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "this is javascript"),
-    React.createElement("h2", {}, "this is rahul"),
-  ]),
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h3", {}, "this is javascript"),
-    React.createElement("h4", {}, "this is rahul"),
-  ]),
-]);
+const Img = () => (
+  <img
+    src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
+    style={{ objectFit: "cover" }}
+  />
+);
 
-const root = ReactDOM.createRoot(document.querySelector("#root"));
+const HeadingComponent = () => (
+  <div className="container">
+    <Img />
+    <h1>Namaste React 🚀</h1>
+  </div>
+);
 
-root.render(parent);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<HeadingComponent />);
