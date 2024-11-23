@@ -4,7 +4,7 @@
   "description": "This is namaste react by akshay saini",
   "scripts": {
     "start": "parcel index.html",
-    "build":"parcel build index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -25,7 +25,7 @@
   "devDependencies": {
     "process": "^0.11.10"
   },
-  "browerslist":[
+  "browerslist": [
     "last 2 versions"
   ]
 }
