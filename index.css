@@ -56,3 +56,14 @@ header {
 .card-info {
   padding: 0px 10px;
 }
+
+.cuisines {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.filter-btn {
+  padding: 10px;
+  margin: 20px;
+  cursor: pointer;
+}
