@@ -67,3 +67,12 @@ header {
   margin: 20px;
   cursor: pointer;
 }
+
+.signup_login {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.search {
+  padding: 10px 20px;
+}
