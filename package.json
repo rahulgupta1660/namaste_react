@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "This is namaste react by akshay saini",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -17,10 +19,16 @@
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.13.2",
-    "process": "^0.11.10"
+    "postcss": "^8.4.49",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.17"
   },
   "dependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
-  }
+    "react-dom": "^19.0.0",
+    "react-router": "^7.0.2"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
 }
