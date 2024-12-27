@@ -1,18 +1,21 @@
-import { NavLink } from "react-router";
+import { Link } from "react-router";
 
 const Header = () => {
   return (
-    <header className="flex justify-between p-5">
+    <header className="flex justify-between bg-orange-200 p-5">
       <p>logo</p>
-      <ul className="list-style-none flex gap-5">
+      <ul className="flex gap-5">
         <li>
-          <NavLink to="/">home</NavLink>
+          <Link to="/">home</Link>
         </li>
         <li>
-          <NavLink to="/contact">contact</NavLink>
+          <Link to="/contact">contact</Link>
         </li>
         <li>
-          <NavLink to="/about">about</NavLink>
+          <Link to="/about">about</Link>
+        </li>
+        <li>
+          <Link to="#">Cart</Link>
         </li>
       </ul>
     </header>

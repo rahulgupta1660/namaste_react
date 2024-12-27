@@ -1,11 +1,14 @@
 import { Outlet } from "react-router";
 import Header from "./Header";
+import { useEffect, useState } from "react";
 
 const App = () => {
   return (
     <>
       <Header />
-      <Outlet />
+      <div className="container p-5">
+        <Outlet />
+      </div>
     </>
   );
 };
