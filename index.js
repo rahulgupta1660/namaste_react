@@ -6,6 +6,7 @@ import Contact from "./src/components/Contact";
 import About from "./src/components/About";
 import Error from "./src/components/Error";
 import App from "./src/components/App";
+import Restaurant from "./src/components/Restaurant";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -13,6 +14,7 @@ createRoot(document.getElementById("root")).render(
       <Route path="/" element={<App />}>
         <Route index element={<Home />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="restaurants/:id" element={<Restaurant />} />
         <Route path="about" element={<About />} />
         <Route path="*" element={<Error />} />
       </Route>

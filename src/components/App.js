@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
 import Header from "./Header";
-import { useEffect, useState } from "react";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   return (
@@ -9,6 +9,7 @@ const App = () => {
       <div className="container p-5">
         <Outlet />
       </div>
+      {/* <Restaurant /> */}
     </>
   );
 };

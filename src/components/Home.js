@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import RestaurantShimmer from "./RestaurantShimmer";
 
 const Home = () => {
-  let [restaurants, setRestaurants] = useState([]);
+  const [restaurants, setRestaurants] = useState([]);
+
+  const [filteredRestaurants, setfilteredRestaurants] = useState([]);
+
+  const [searchterm, setSearchterm] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -17,28 +21,43 @@ const Home = () => {
       const { restaurants } =
         data?.cards[4]?.card?.card?.gridElements?.infoWithStyle;
       setRestaurants(restaurants);
+      setfilteredRestaurants(restaurants);
     } catch (error) {
       console.log(error);
     }
   };
 
-  const topRated = () => {
-    const filteredRestaurants = restaurants.filter(
-      (res) => res.info.avgRating > 4.2
-    );
-    setRestaurants(filteredRestaurants);
-  };
   return (
     <>
+      <input
+        type="text"
+        className="border p-2 rounded-md text-sm"
+        placeholder="Search..."
+        value={searchterm}
+        onChange={(e) => setSearchterm(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.code === "Enter") {
+            const searchedRestaurants = restaurants.filter((res) =>
+              res.info.name.toLowerCase().includes(searchterm.toLowerCase())
+            );
+            setfilteredRestaurants(searchedRestaurants);
+          }
+        }}
+      />
       <button
-        className="border-2 p-2 mb-1 text-sm rounded-md"
-        onClick={topRated}
+        className="border-2 p-2 mb-1 text-sm rounded-md ml-1"
+        onClick={() => {
+          const topRated = restaurants.filter(
+            (res) => res.info.avgRating > 4.3
+          );
+          setfilteredRestaurants(topRated);
+        }}
       >
         Top Rated Restaurants
       </button>
-      {restaurants.length > 0 ? (
+      {filteredRestaurants.length > 0 ? (
         <div className="grid grid-cols-4 gap-y-10">
-          {restaurants.map((restaurant) => {
+          {filteredRestaurants.map((restaurant) => {
             const {
               id,
               name,
